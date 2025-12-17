@@ -1,0 +1,11 @@
+<h2>Assets</h2>
+
+<ul>
+  <li *ngFor="let a of assets">
+    {{ a.name }} ({{ a.type }})
+  </li>
+</ul>
+
+<div *ngIf="assets.length === 0">
+  Keine Assets vorhanden.
+</div>
