@@ -1,11 +1,39 @@
-<h2>Assets</h2>
+<div class="container">
 
-<ul>
-  <li *ngFor="let a of assets">
-    {{ a.name }} ({{ a.type }})
-  </li>
-</ul>
+  <h2>Assets</h2>
 
-<div *ngIf="assets.length === 0">
-  Keine Assets vorhanden.
+  <button class="primary" routerLink="/assets/new">
+    Neues Asset anlegen
+  </button>
+
+  <ng-container *ngIf="assets$ | async as assets">
+
+    <table class="asset-table" *ngIf="assets.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Typ</th>
+          <th>Status</th>
+          <th>Zugewiesen an</th>
+          <th>Standort</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of assets" (click)="openDetails(a._id)">
+          <td>{{ a.name }}</td>
+          <td>{{ a.type }}</td>
+          <td>{{ statusLabels[a.status] || a.status }}</td>
+          <td>{{ a.assignedTo || '-' }}</td>
+          <td>{{ a.location || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="assets.length === 0">
+      Keine Assets vorhanden.
+    </p>
+
+  </ng-container>
+
 </div>

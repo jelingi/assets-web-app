@@ -11,7 +11,6 @@ export class AssetService {
   list() {
     return this.http.get<Asset[]>(this.baseUrl);
   }
-
   get(id: string) {
     return this.http.get<Asset>(`${this.baseUrl}/${id}`);
   }
@@ -28,3 +27,4 @@ export class AssetService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
+

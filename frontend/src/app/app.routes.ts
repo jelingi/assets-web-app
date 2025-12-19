@@ -8,5 +8,6 @@ export const routes: Routes = [
   { path: 'assets/new', component: AssetFormComponent },
   { path: 'assets/:id', component: AssetDetailComponent },
   { path: 'assets/:id/edit', component: AssetFormComponent }
+  
 ];
 

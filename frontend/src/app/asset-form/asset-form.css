@@ -1,0 +1,14 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-actions {
+  margin-top: 20px;
+}

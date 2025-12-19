@@ -6,7 +6,14 @@ const AssetSchema = new mongoose.Schema(
     type: String,
     serialNumber: String,
     status: String,
-    assignedTo: String
+    assignedTo: String,
+    location: { type: String, default: '' },
+    notes: { type: String, default: '' },
+
+   history: {
+      type: [Object],
+      default: []
+    }
   },
   { timestamps: true }
 );
