@@ -12,14 +12,11 @@
   <p><strong>Notizen:</strong> {{ asset.notes || '-' }}</p>
 
   <div class="form-actions">
-    <!-- ✔ BEARBEITEN = ROUTING -->
     <button
       class="primary"
       [routerLink]="['/assets', asset._id, 'edit']">
       Bearbeiten
     </button>
-
-    <!-- ✔ LÖSCHEN = deleteAsset -->
     <button
       class="danger"
       (click)="deleteAsset(asset._id)">
